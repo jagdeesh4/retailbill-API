@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.3" icons="true" automaticImage="JPEG" always-add-relationships="false" 
+  generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true" 
+  router="FAN">  
+  <class id="1" language="java" name="com.retail.retailWebsite.service.NetAmountOnBillService" project="retailWebsite" 
+    file="/retailWebsite/src/main/java/com/retail/retailWebsite/service/NetAmountOnBillService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="116" width="283" x="578" y="331"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.retail.retailWebsite.RetailWebsiteApplication" project="retailWebsite" 
+    file="/retailWebsite/src/main/java/com/retail/retailWebsite/RetailWebsiteApplication.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="116" width="243" x="295" y="15"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.retail.retailWebsite.domain.UserBill" project="retailWebsite" 
+    file="/retailWebsite/src/main/java/com/retail/retailWebsite/domain/UserBill.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="276" width="262" x="881" y="15"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.retail.retailWebsite.controller.NetAmountOnBillController" 
+    project="retailWebsite" 
+    file="/retailWebsite/src/main/java/com/retail/retailWebsite/controller/NetAmountOnBillController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="116" width="263" x="578" y="15"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="5">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="6" name="netAmountOnBillService"/>      
+      <multiplicity id="7" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
