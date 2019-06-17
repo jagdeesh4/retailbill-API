@@ -17,7 +17,7 @@ public class NetAmountOnBillController {
 	@Autowired
 	NetAmountOnBillService netAmountOnBillService;
 	
-	@RequestMapping(value="/index",method=RequestMethod.POST,produces = "application/json",consumes = "application/json")
+	@RequestMapping(value="/getNetBillAmount",method=RequestMethod.POST,produces = "application/json",consumes = "application/json")
 	public BigDecimal index(@RequestBody UserBill userBill) {
 		
 		
