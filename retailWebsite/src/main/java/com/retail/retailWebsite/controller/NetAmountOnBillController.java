@@ -21,13 +21,10 @@ public class NetAmountOnBillController {
 	public BigDecimal index(@RequestBody UserBill userBill) {
 		
 		
-		if(!userBill.getBillType().equals("GROCERY")) {
-			BigDecimal billAmount=netAmountOnBillService.fetchBillAmount(userBill);
+			BigDecimal billAmount=netAmountOnBillService.fetchBillAmount(userBill.getBillType(),userBill.getUserType(),userBill.getBillAmount());
 						
 			return billAmount;
-		}else {
-			return userBill.getBillAmount();	
-		}
+		
 		
 		
 	}

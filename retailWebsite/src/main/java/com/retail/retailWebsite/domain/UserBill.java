@@ -6,13 +6,8 @@ public class UserBill {
 
 	private String userType;
 	private BigDecimal billAmount;
-	public UserBill(String userType, BigDecimal billAmount, String billType) {
-		super();
-		this.userType = userType;
-		this.billAmount = billAmount;
-		this.billType = billType;
-	}
 	private String billType;
+		
 	public String getUserType() {
 		return userType;
 	}
