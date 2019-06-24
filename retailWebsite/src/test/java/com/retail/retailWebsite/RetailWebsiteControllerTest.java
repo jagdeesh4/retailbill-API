@@ -35,9 +35,9 @@ public class RetailWebsiteControllerTest {
 	
 	BigDecimal bill=new BigDecimal(1000);
 	
-	String exampleCourseJson = "{\"user\":{\"id\":\"1\",\"username\":\"Jasu\",\"firstName\":\"Jags\",\"lastName\":\"Supp\",\"type\":\"CUSTOMER\","
-			+ "\"joinDate\":\"2015-06-06\"},\"bill\":{\"id\":\"1\",\"items\":[{\"price\":\"100\",\"name\":\"dhdh\",\"type\":\"GROCERY\"},"
-			+ "{\"price\":\"100\",\"name\":\"dhdh\",\"type\":\"CLOTHING\"}]}}";
+	String exampleCourseJson = "{\"user\":{\"id\":\"1\",\"username\":\"Jagdeesh\",\"firstName\":\"Jagdeesh\",\"lastName\":\"Reddy\",\"type\":\"CUSTOMER\","
+			+ "\"joinDate\":\"2015-06-06\"},\"bill\":{\"id\":\"1\",\"items\":[{\"price\":\"100\",\"name\":\"Orange\",\"type\":\"GROCERY\"},"
+			+ "{\"price\":\"100\",\"name\":\"Jeans\",\"type\":\"CLOTHING\"}]}}";
 	
 	@Test
 	public void retrieveDetailsForCourse() throws Exception {

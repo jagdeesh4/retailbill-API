@@ -34,11 +34,11 @@ public class RetailWebsiteServiceTest {
 	@Test
     public void testCalculateMixItems() {
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item(BigDecimal.valueOf(100.0), "Banana", ItemType.GROCERY));
-        items.add(new Item(BigDecimal.valueOf(100.0), "Apple", ItemType.GROCERY));
-        items.add(new Item(BigDecimal.valueOf(100.0), "Orange", ItemType.GROCERY));
-        items.add(new Item(BigDecimal.valueOf(100.0), "Tshirt", ItemType.CLOTHING));
-        items.add(new Item(BigDecimal.valueOf(100.0), "Jeans", ItemType.CLOTHING));
+        items.add(new Item(BigDecimal.valueOf(100), "Banana", ItemType.GROCERY));
+        items.add(new Item(BigDecimal.valueOf(100), "Apple", ItemType.GROCERY));
+        items.add(new Item(BigDecimal.valueOf(100), "Orange", ItemType.GROCERY));
+        items.add(new Item(BigDecimal.valueOf(100), "Tshirt", ItemType.CLOTHING));
+        items.add(new Item(BigDecimal.valueOf(100), "Jeans", ItemType.CLOTHING));
         
         BigDecimal total = netAmountOnBillService.calculateItemsAmount(items, null);
         assertEquals(0, BigDecimal.valueOf(500).compareTo(total));
@@ -47,9 +47,9 @@ public class RetailWebsiteServiceTest {
 	@Test
     public void testCalculateOnlyGroceryItems() {
         List<Item> items = new ArrayList<Item>();
-        items.add(new Item(BigDecimal.valueOf(100.0), "Banana", ItemType.GROCERY));
-        items.add(new Item(BigDecimal.valueOf(100.0), "Apple", ItemType.GROCERY));
-        items.add(new Item(BigDecimal.valueOf(100.0), "Orange", ItemType.GROCERY));
+        items.add(new Item(BigDecimal.valueOf(100), "Banana", ItemType.GROCERY));
+        items.add(new Item(BigDecimal.valueOf(100), "Apple", ItemType.GROCERY));
+        items.add(new Item(BigDecimal.valueOf(100), "Orange", ItemType.GROCERY));
         
         BigDecimal total = netAmountOnBillService.calculateItemsAmount(items, null);
         assertEquals(0, BigDecimal.valueOf(300).compareTo(total));
@@ -59,10 +59,10 @@ public class RetailWebsiteServiceTest {
     public void testCalculateNonGroceryItems() {
         List<Item> items = new ArrayList<Item>();
 
-        items.add(new Item(BigDecimal.valueOf(100.0), "Pen", ItemType.STATIONARY));
-        items.add(new Item(BigDecimal.valueOf(100.0), "Paper", ItemType.STATIONARY));
-        items.add(new Item(BigDecimal.valueOf(100.0), "Tshirt", ItemType.CLOTHING));
-        items.add(new Item(BigDecimal.valueOf(100.0), "Jeans", ItemType.CLOTHING));
+        items.add(new Item(BigDecimal.valueOf(100), "Pen", ItemType.STATIONARY));
+        items.add(new Item(BigDecimal.valueOf(100), "Paper", ItemType.STATIONARY));
+        items.add(new Item(BigDecimal.valueOf(100), "Tshirt", ItemType.CLOTHING));
+        items.add(new Item(BigDecimal.valueOf(100), "Jeans", ItemType.CLOTHING));
         
         BigDecimal total = netAmountOnBillService.calculateItemsAmount(items, null);
         assertEquals(0, BigDecimal.valueOf(400).compareTo(total));
@@ -85,11 +85,11 @@ public class RetailWebsiteServiceTest {
 	   @Test
 	    public void testCalculateItemsAmountSample1() {
 		   List<Item> items = new ArrayList<Item>();
-		    items.add(new Item(BigDecimal.valueOf(100.0), "Banana", ItemType.GROCERY));
-	        items.add(new Item(BigDecimal.valueOf(100.0), "Apple", ItemType.GROCERY));
-	        items.add(new Item(BigDecimal.valueOf(100.0), "Orange", ItemType.GROCERY));
-	        items.add(new Item(BigDecimal.valueOf(100.0), "Tshirt", ItemType.CLOTHING));
-	        items.add(new Item(BigDecimal.valueOf(100.0), "Jeans", ItemType.CLOTHING));
+		    items.add(new Item(BigDecimal.valueOf(100), "Banana", ItemType.GROCERY));
+	        items.add(new Item(BigDecimal.valueOf(100), "Apple", ItemType.GROCERY));
+	        items.add(new Item(BigDecimal.valueOf(100), "Orange", ItemType.GROCERY));
+	        items.add(new Item(BigDecimal.valueOf(100), "Tshirt", ItemType.CLOTHING));
+	        items.add(new Item(BigDecimal.valueOf(100), "Jeans", ItemType.CLOTHING));
 		   BigDecimal amount = netAmountOnBillService.calculateItemsAmount(items,null);
 		   assertEquals(0, BigDecimal.valueOf(500).compareTo(amount));
 	    }
@@ -97,9 +97,9 @@ public class RetailWebsiteServiceTest {
 	   @Test
 	    public void testCalculateItemsAmountSample2() {
 		   List<Item> items = new ArrayList<Item>();
-		    items.add(new Item(BigDecimal.valueOf(100.0), "Banana", ItemType.GROCERY));
-	        items.add(new Item(BigDecimal.valueOf(100.0), "Apple", ItemType.GROCERY));
-	        items.add(new Item(BigDecimal.valueOf(100.0), "Orange", ItemType.GROCERY));
+		    items.add(new Item(BigDecimal.valueOf(100), "Banana", ItemType.GROCERY));
+	        items.add(new Item(BigDecimal.valueOf(100), "Apple", ItemType.GROCERY));
+	        items.add(new Item(BigDecimal.valueOf(100), "Orange", ItemType.GROCERY));
 		   BigDecimal amount = netAmountOnBillService.calculateItemsAmount(items,"GROCERY");
 		   assertEquals(0, BigDecimal.valueOf(300).compareTo(amount));
 	    }
