@@ -20,7 +20,7 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.retail.retailWebsite.controller.NetAmountOnBillController;
-import com.retail.retailWebsite.service.NetAmountOnBillService;
+import com.retail.retailWebsite.service.NetAmountOnBillServiceImpl;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = NetAmountOnBillController.class)
@@ -30,20 +30,22 @@ public class RetailWebsiteControllerTest {
 	private MockMvc mockMvc;
 	
 	@MockBean
-	NetAmountOnBillService netAmountOnBillService;
+	NetAmountOnBillServiceImpl netAmountOnBillService;
 	
 	
 	BigDecimal bill=new BigDecimal(1000);
-
-	String exampleCourseJson = "{\"userType\":\"EMPLOYEE\",\"billAmount\":\"1000\",\"billType\":\"GROCERYY\"}";
+	
+	String exampleCourseJson = "{\"user\":{\"id\":\"1\",\"username\":\"Jasu\",\"firstName\":\"Jags\",\"lastName\":\"Supp\",\"type\":\"CUSTOMER\","
+			+ "\"joinDate\":\"2015-06-06\"},\"bill\":{\"id\":\"1\",\"items\":[{\"price\":\"100\",\"name\":\"dhdh\",\"type\":\"GROCERY\"},"
+			+ "{\"price\":\"100\",\"name\":\"dhdh\",\"type\":\"CLOTHING\"}]}}";
 	
 	@Test
 	public void retrieveDetailsForCourse() throws Exception {
 
 		Mockito.when(
-				netAmountOnBillService.fetchBillAmount(Mockito.anyString(),Mockito.anyString(),Mockito.any(BigDecimal.class))).thenReturn(bill);
+				netAmountOnBillService.fetchBillAmount(Mockito.any(),Mockito.any())).thenReturn(bill);
 
-		RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/index").accept(MediaType.APPLICATION_JSON).content(exampleCourseJson).contentType(MediaType.APPLICATION_JSON);
+		RequestBuilder requestBuilder = MockMvcRequestBuilders.post("/getNetBillAmount").accept(MediaType.APPLICATION_JSON).content(exampleCourseJson).contentType(MediaType.APPLICATION_JSON);
 
 		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 		MockHttpServletResponse response=result.getResponse();

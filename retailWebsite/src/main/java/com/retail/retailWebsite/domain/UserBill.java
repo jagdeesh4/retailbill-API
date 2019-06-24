@@ -1,30 +1,40 @@
 package com.retail.retailWebsite.domain;
 
-import java.math.BigDecimal;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.retail.retailWebsite.domain.bill.Bill;
+import com.retail.retailWebsite.domain.user.User;
 
 public class UserBill {
 
-	private String userType;
-	private BigDecimal billAmount;
-	private String billType;
+	@JsonProperty
+	private User user=null;
+	
+	@JsonProperty
+	private Bill bill=null;
+	
+	public UserBill() {
 		
-	public String getUserType() {
-		return userType;
 	}
-	public void setUserType(String userType) {
-		this.userType = userType;
+	
+	public UserBill(User user, Bill bill) {
+		this.user=user;
+		this.bill=bill;
 	}
-	public BigDecimal getBillAmount() {
-		return billAmount;
+
+	public User getUser() {
+		return user;
 	}
-	public void setBillAmount(BigDecimal billAmount) {
-		this.billAmount = billAmount;
+
+	public void setUser(User user) {
+		this.user = user;
 	}
-	public String getBillType() {
-		return billType;
+
+	public Bill getBill() {
+		return bill;
 	}
-	public void setBillType(String billType) {
-		this.billType = billType;
+
+	public void setBill(Bill bill) {
+		this.bill = bill;
 	}
 	
 	
