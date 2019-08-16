@@ -31,4 +31,16 @@ public class NetAmountOnBillController {
 		
 		
 	}
+	
+	@RequestMapping(value="/getBillAmount",method=RequestMethod.GET,produces = "application/json",consumes = "application/json")
+	public String fetchWish() {
+		
+		
+			
+						
+			return "Hello Customer";
+		
+		
+		
+	}
 }
